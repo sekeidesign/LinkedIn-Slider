@@ -84,6 +84,7 @@
                 class="w-full relative overflow-hidden" 
                 x-data="{ 
                     imgUIShow: false,
+                    currentImg: 1,
                     images: [
                         {
                             id: 1,
@@ -128,7 +129,7 @@
                         <span class="text-sm">• 11 pages</span>
                     </div>
                     <button 
-                        class="absolute left-0 top-0 bottom-0 my-auto ml-4 bg-black bg-opacity-75 rounded-full h-8 w-8 flex items-center justify-center"
+                        class="absolute left-0 top-0 bottom-0 my-auto ml-4 bg-black bg-opacity-75 hover:bg-opacity-100 rounded-full h-8 w-8 flex items-center justify-center"
                         x-show="imgUIShow === true"
                         x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="opacity-0"
@@ -140,7 +141,7 @@
                         <svg viewBox="0 0 24 24" width="16px" height="16px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="artdeco-icon" focusable="false"><path d="M10,12l6,8.94L14.45,22,8.26,12.85a1.5,1.5,0,0,1,0-1.69L14.45,2,16,3.06Z" class="large-icon" style="fill: currentColor"></path></svg>
                     </button>
                     <button 
-                        class="absolute right-0 top-0 bottom-0 my-auto mr-4 bg-black bg-opacity-75 rounded-full h-8 w-8 flex items-center justify-center"
+                        class="absolute right-0 top-0 bottom-0 my-auto mr-4 bg-black bg-opacity-75 hover:bg-opacity-100 rounded-full h-8 w-8 flex items-center justify-center"
                         x-show="imgUIShow === true"
                         x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="opacity-0"
@@ -164,8 +165,8 @@
                         <span>1/11</span>
                     </div>
                 </div>
-                <template x-for="image in images" :key="id" class="w-full">
-                    <img :src="image.imgSrc" alt="">
+                <template x-for="image in images" :key="image.id">
+                    <img x-show="currentImg === image.id" :src="image.imgSrc" alt="">
                 </template>
             </div>
             <div class="px-4">

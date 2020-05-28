@@ -15,10 +15,10 @@
             e.target.dispatchEvent(event);
         }, mouseStopDelay);
     });
-}(1500));
+}(1000));
 
 const mouseLeaveUI = () => {
     setTimeout(() => {
         imgUIShow = false;
-    }, 1500);
+    }, 1000);
 }
