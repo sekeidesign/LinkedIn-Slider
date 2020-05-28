@@ -1,2 +1,2 @@
 # LinkedIn Slider
- Recreating a LinkedIn Slider using AlpineJS and Tailwind CSS
+ Recreating a LinkedIn slider post using AlpineJS and Tailwind CSS
