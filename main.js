@@ -16,9 +16,3 @@
         }, mouseStopDelay);
     });
 }(1000));
-
-const mouseLeaveUI = () => {
-    setTimeout(() => {
-        imgUIShow = false;
-    }, 1000);
-}

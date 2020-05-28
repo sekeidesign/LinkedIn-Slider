@@ -112,7 +112,7 @@
                 @mousestop="imgUIShow = false"
                 @mouseout="setTimeout(() => {
                     imgUIShow = false;
-                }, 1500);"
+                }, 1000);"
             >
                 <div class="absolute w-full h-full flex text-white">
                     <div 
@@ -167,9 +167,11 @@
                         <span>1/11</span>
                     </div>
                 </div>
-                <template x-for="image in images" :key="image.id">
-                    <img x-show="currentImg === image.id" :src="image.imgSrc" alt="">
-                </template>
+                <div>
+                    <template x-for="image in images" :key="image.id">
+                        <img x-show="currentImg === image.id" :src="image.imgSrc" alt="">
+                    </template>
+                </div>
             </div>
             <div class="px-4">
                 <div class="flex py-2 border-b border-gray-300 text-gray-700 text-xs">
