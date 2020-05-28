@@ -130,25 +130,27 @@
                     </div>
                     <button 
                         class="absolute left-0 top-0 bottom-0 my-auto ml-4 bg-black bg-opacity-75 hover:bg-opacity-100 rounded-full h-8 w-8 flex items-center justify-center"
-                        x-show="imgUIShow === true"
+                        x-show="imgUIShow === true && currentImg !== 1"
                         x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="opacity-0"
                         x-transition:enter-end="opacity-100"
                         x-transition:leave="transition ease-in duration-300"
                         x-transition:leave-start="opacity-100"
                         x-transition:leave-end="opacity-0"
+                        @click="currentImg--"
                     >
                         <svg viewBox="0 0 24 24" width="16px" height="16px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="artdeco-icon" focusable="false"><path d="M10,12l6,8.94L14.45,22,8.26,12.85a1.5,1.5,0,0,1,0-1.69L14.45,2,16,3.06Z" class="large-icon" style="fill: currentColor"></path></svg>
                     </button>
                     <button 
                         class="absolute right-0 top-0 bottom-0 my-auto mr-4 bg-black bg-opacity-75 hover:bg-opacity-100 rounded-full h-8 w-8 flex items-center justify-center"
-                        x-show="imgUIShow === true"
+                        x-show="imgUIShow === true && currentImg < images.length"
                         x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="opacity-0"
                         x-transition:enter-end="opacity-100"
                         x-transition:leave="transition ease-in duration-300"
                         x-transition:leave-start="opacity-100"
                         x-transition:leave-end="opacity-0"
+                        @click="currentImg++"
                     >
                         <svg viewBox="0 0 24 24" width="16px" height="16px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="artdeco-icon" focusable="false"><path d="M14,12L8,3.06,9.55,2l6.19,9.15a1.5,1.5,0,0,1,0,1.69L9.55,22,8,20.94Z" class="large-icon" style="fill: currentColor"></path></svg>
                     </button>
