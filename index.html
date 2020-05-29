@@ -15,7 +15,7 @@
     </style>
 </head>
 <body class="bg-gray-200 md:p-4">
-    <div class="container mx-auto w-full max-w-xl">
+    <div class="container mx-auto w-full max-w-xl overflow-hidden">
         <div class="bg-white sm:border border-t border-b border-gray-400 sm:rounded-sm sm:my-0 my-3 shadow w-full">
             <div class="p-4 relative">
                 <div class="absolute top-0 right-0 h-8 w-8 mt-2 mr-4 rounded-full hover:bg-gray-200">
@@ -33,9 +33,9 @@
                             <span>• 1st</span>
                         </div>
                         <div>
-                            <span class="text-sm truncate w-full sm:max-w-md max-w-xs block">Logo Designer For Internet Startups | Free Logo Review | Posting Design Content On Linkedin To Help Startups</span>
+                            <span class="sm:text-sm text-xs truncate sm:w-full w-3/4 max-w-md block">Logo Designer For Internet Startups | Free Logo Review | Posting Design Content On Linkedin To Help Startups</span>
                         </div>
-                        <div class="text-sm flex items-center">
+                        <div class="sm:text-sm text-xs flex items-center">
                             <span class="mr-1">1w</span>
                             <span class="mr-1">• Edited</span>
                             <span class="mr-1">•</span>
@@ -111,7 +111,7 @@
                     <span class="text-sm font-semibold">Branding In Seven Steps</span>
                     <span class="text-sm">• 11 pages</span> 
                 </div>
-                <div class="flex w-full overflow-scroll">
+                <div class="flex w-full overflow-scroll pr-2">
                     <template x-for="image in images" :key="image.id">
                         <img :src="image.imgSrc" class="m-2 rounded-sm w-11/12" alt="">
                     </template>
