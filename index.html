@@ -14,9 +14,9 @@
         }
     </style>
 </head>
-<body class="bg-gray-200 p-4">
+<body class="bg-gray-200 md:p-4">
     <div class="container mx-auto w-full max-w-xl">
-        <div class="bg-white border border-gray-400 rounded-sm shadow w-full">
+        <div class="bg-white sm:border border-t border-b border-gray-400 sm:rounded-sm sm:my-0 my-3 shadow w-full">
             <div class="p-4 relative">
                 <div class="absolute top-0 right-0 h-8 w-8 mt-2 mr-4 rounded-full hover:bg-gray-200">
                     <button class="p-1">
@@ -26,14 +26,14 @@
                     </button>
                 </div>
                 <a href="#" class="flex items-center text-gray-600 pr-32">
-                    <img src="/Assets/Images/pg-headshot.jpg" alt="" class="rounded-full h-12 w-12 mr-4 flex-no-shrink">
+                    <img src="/Assets/Images/pg-headshot.jpg" alt="" class="rounded-full h-12 w-12 mr-4">
                     <div>
                         <div>
                             <span class="font-semibold text-gray-900 hover:text-blue-700 hover:underline">Piergiorgio Gonni</span>
                             <span>• 1st</span>
                         </div>
                         <div>
-                            <span class="text-sm truncate w-full max-w-md block">Logo Designer For Internet Startups | Free Logo Review | Posting Design Content On Linkedin To Help Startups</span>
+                            <span class="text-sm truncate w-full sm:max-w-md max-w-xs block">Logo Designer For Internet Startups | Free Logo Review | Posting Design Content On Linkedin To Help Startups</span>
                         </div>
                         <div class="text-sm flex items-center">
                             <span class="mr-1">1w</span>
@@ -69,7 +69,7 @@
                     -
                     <br>
                     <br>
-                    <div class="flex">
+                    <div class="flex flex-wrap">
                         <a href="#" class="mr-1 text-blue-700 hover:text-blue-800 hover:underline">#branding</a>
                         <a href="#" class="mr-1 text-blue-700 hover:text-blue-800 hover:underline">#logo</a>
                         <a href="#" class="mr-1 text-blue-700 hover:text-blue-800 hover:underline">#brand</a>
@@ -80,8 +80,45 @@
                     </div>
                 </div>
             </div>
+            <div
+                class="bg-gray-200 py-2 block sm:hidden"
+                x-data="{
+                    images: [
+                        {
+                            id: 1,
+                            imgSrc: '/Assets/Images/img-1.png'
+                        },
+                        {
+                            id: 2,
+                            imgSrc: '/Assets/Images/img-2.png'
+                        },
+                        {
+                            id: 3,
+                            imgSrc: '/Assets/Images/img-3.png'
+                        },
+                        {
+                            id: 4,
+                            imgSrc: '/Assets/Images/img-4.png'
+                        },
+                        {
+                            id: 5,
+                            imgSrc: '/Assets/Images/img-5.png'
+                        }
+                    ]
+                }"
+            >
+                <div class="px-4">
+                    <span class="text-sm font-semibold">Branding In Seven Steps</span>
+                    <span class="text-sm">• 11 pages</span> 
+                </div>
+                <div class="flex w-full overflow-scroll">
+                    <template x-for="image in images" :key="image.id">
+                        <img :src="image.imgSrc" class="m-2 rounded-sm w-11/12" alt="">
+                    </template>
+                </div>
+            </div>
             <div 
-                class="w-full relative overflow-hidden" 
+                class="w-full relative overflow-hidden hidden sm:block" 
                 x-data="{ 
                     imgUIShow: false,
                     currentImg: 1,
@@ -130,6 +167,7 @@
                     </div>
                     <button 
                         class="absolute left-0 top-0 bottom-0 my-auto ml-4 bg-black bg-opacity-75 hover:bg-opacity-100 rounded-full h-8 w-8 flex items-center justify-center"
+                        @mouseover="imgUIShow = true"
                         x-show="imgUIShow === true && currentImg !== 1"
                         x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="opacity-0"
@@ -143,6 +181,7 @@
                     </button>
                     <button 
                         class="absolute right-0 top-0 bottom-0 my-auto mr-4 bg-black bg-opacity-75 hover:bg-opacity-100 rounded-full h-8 w-8 flex items-center justify-center"
+                        @mouseover="imgUIShow = true"
                         x-show="imgUIShow === true && currentImg < images.length"
                         x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="opacity-0"
